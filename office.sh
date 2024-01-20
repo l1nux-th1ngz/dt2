@@ -11,7 +11,9 @@ wait
 sudo apt update
 
 # Install LibreOffice
-sudo apt install libreoffice=1:7.6.4-0ubuntu0.20.04.2
+# sudo apt install libreoffice=1:7.6.4-0ubuntu0.20.04.2
+sudo apt install -t bookworm libreoffice=1:7.6.4-1
+
 
 sleep 1
 
