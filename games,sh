@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#script to remove all out of the box games in debian
+
+sudo apt-get --purge remove aisleriot five-or-more four-in-a-row hitori iagno gnome-chess gnome-klotski gnome-mahjongg gnome-mines gnome-nibbles gnome-robots gnome-sudoku gnome-taquin gnome-tetravex lightsoff quadrapassel swell-foop tali
+
+
+sudo apt autoremove
