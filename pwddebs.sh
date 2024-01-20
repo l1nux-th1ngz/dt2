@@ -1,9 +1,6 @@
 ```bash
 #!/bin/bash
 
-# I like thses
-sudo apt-get install -y nala brightnessctl playerctl
-
 # Install all .deb files in the pwd
 for deb_file in ./*.deb; do
     if [ -e "$deb_file" ]; then
