@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Install necessary packages
-sudo apt-get install -y nala brightnessctl playerctl
-
 # Update the system
 sudo apt-get update && sudo apt-get upgrade -y
 
