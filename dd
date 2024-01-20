@@ -1,47 +1,28 @@
 #!/bin/bash
 
-# ... (previous code)
+# Install Budgie Desktop
+sudo apt-get install -y budgie-desktop
+sudo apt install --install-suggests budgie-desktop -y
 
-# Install essential packages (continuation)
-sudo apt-get install -y build-essential nano micro nala brightnessctl playerctl dpkg synaptic apt-transport-https lsb-release ca-certificates xdg-user-dirs xdg-user-dirs-gtk dialog mtools dosfstools gvfs-backends policykit-1-gnome network-manager network-manager-gnome thunar thunar-archive-plugin thunar-volman file-roller tilix alacritty terminator kitty alacritty pulseaudio alsa-utils pavucontrol volumeicon-alsa pamixer neofetch curl feh xdg-user-dirs xdg-user-dirs-gtk fonts-recommended fonts-ubuntu fonts-font-awesome fonts-terminus picom rofi dunst libnotify-bin unzip zip numlockx geany geany-plugin-addons geany-plugin-git-changebar geany-plugin-overview geany-plugin-spellcheck geany-plugin-treebrowser geany-plugin-vimode scrot evince pdfarranger transmission-gtk gimp obs-studio mkvtoolnix-gui mpv qimgv l3afpad notepadqq redshift cpu-x wmctrl udns-utils whois curl
+# Install essential packages
+sudo apt-get install -y build-essential nano micro nala brightnessctl playerctl dpkg synaptic neofetch htop btop cava xdg-user-dirs xdg-user-dirs-gtk dialog mtools dosfstools gvfs gvfs-backends policykit-1-gnome network-manager network-manager-gnome thunar thunar-archive-plugin thunar-volman file-roller tilix alacritty terminator kitty alacritty pulseaudio alsa-utils pavucontrol volumeicon-alsa pamixer neofetch curl fonts-recommended fonts-ubuntu fonts-font-awesome fonts-terminus picom rofi dunst libnotify-bin unzip zip fonts-font-awesome fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus geany geany-plugins pdfarranger numix-icon-theme numix-gtk-theme dmz-cursor-theme intel-microcode flatpak easyssh plymouth transmission-gtk obs-studio mkvtoolnix-gui mpv qimgv notepadqq firefox-esr redshift cpu-x udns-utils whois curl
+sddm sddm-gtk-greeter-settings
 
-# Configure SDDM and install a theme
-sudo apt-get install -y sddm sddm-gtk-greeter-settings
+# Wait for previous commands to finish
+sleep 2
+
+# Enable SDDM and install a theme
 sudo systemctl enable sddm
-git clone https://github.com/stuomas/delicious-sddm-theme.git &&
-cd delicious-sddm-theme &&
-./install.sh
+git clone https://github.com/stuomas/delicious-sddm-theme.git && cd delicious-sddm-theme && ./install.sh
 wait
 
-# Install additional packages
-sudo apt-get install -y intel-microcode flatpak easyssh mtools dosfstools timeshift gvfs-backends
+# Enable Flatpak and add Flathub repository
 sudo systemctl enable flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo systemctl enable
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo systemctl enable sddm
 
-# Neofetch/HTOP installation
-sudo apt install -yy neofetch htop btop cava
-
-# EXA installation
-# replace ls command in .bashrc file with line below
-# alias ls='exa -al --long --header --color=always --group-directories-first'
-exa nome-software-plugin-flatpak
-
-# Browser Installation (e.g., Firefox)
-sudo apt install firefox-esr -yy
-
-# Packages needed after installation
-sudo apt install unzip file-roller gedit network-manager-openvpn-gnome -yy
-
-# Install fonts
-sudo apt install fonts-font-awesome fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus -yy
-
-# Create folders in the user directory (e.g., Documents, Downloads, etc.)
+# Create folders in user directory
 xdg-user-dirs-update
 
-# Additional configurations
-sudo apt install numix-icon-theme numix-gtk-theme dmz-cursor-theme -yy
-mkdir ~/Screenshots/
-
-# Reboot
+# Love Myself
 sudo reboot
