@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get install -y terminator rofi polybar
 
 # Add polybar to startup applications
-echo "@polybar" >> ~/.config/autostart
+echo "polybar" >> ~/.config/autostart
 
 # Set keyboard shortcuts
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
