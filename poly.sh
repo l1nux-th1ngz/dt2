@@ -18,11 +18,12 @@ cp /usr/share/doc/rofi/config.rasi "$rofi_config_dir/config.rasi"
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary>Return']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "'terminator'"
 gsettings set org.gnome.settings-daemon.plugins.media-keys kitty "'<Primary>t'"
-gsettings set org.gnome.settings-daemon.plugins.media-keys rofi "'<Super>'"
 
 # Set up Polybar autostart
 autostart_dir="$HOME/.config/autostart"
 mkdir -p "$autostart_dir"
-echo -e "[Desktop Entry]\nType=Application\nExec=polybar --config=$polybar_config_dir/config main\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=Polybar\nName=Polybar" > "$autostart_dir/polybar.desktop"
+echo -e "[Desktop Entry]\nType=Application\nExec=bash -c 'polybar --config=$polybar_config_dir/config main'\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=true\nName[en_US]=Polybar\nName=Polybar" > "$autostart_dir/polybar.desktop"
 
-echo "Installation and setup completed successfully."
+# Display a message for further instructions
+echo "Installation completed successfully."
+echo "Please log out and log in again to apply the changes. If the Rofi shortcut still doesn't work, try using a different key combination."
