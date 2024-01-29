@@ -1,24 +1,5 @@
 #!/bin/bash
 
-# Add animations
-spin[0]="-"
-spin[1]="\\"
-spin[2]="|"
-spin[3]="/"
-sleep 56 & PID=$! 
-
-echo "THIS MAY TAKE A WHILE, PLEASE BE PATIENT WHILE ______ IS RUNNING..."
-printf "["
-# While process is running...
-while kill -0 $PID 2> /dev/null; do 
-    for i in "${spin[@]}"
-    do
-        echo -ne "\b$i"
-        sleep 5m 35.5s
-    done
-done
-printf "] done!"
-
 # Tip: save your customized commands into a file on an internet server
 # and fetch that file with command:
 #
@@ -85,7 +66,24 @@ _PostInstallCommands() {
     # Update User Directories
     xdg-user-dirs-update
 
-    sleep  5m 15s| pv -t
+# Add animations
+spin[0]="-"
+spin[1]="\\"
+spin[2]="|"
+spin[3]="/"
+sleep 56 & PID=$! 
+
+echo "THIS MAY TAKE A WHILE, PLEASE BE PATIENT WHILE ______ IS RUNNING..."
+printf "["
+# While process is running...
+while kill -0 $PID 2> /dev/null; do 
+    for i in "${spin[@]}"
+    do
+        echo -ne "\b$i"
+        sleep 5m 35.5s
+    done
+done
+printf "] done!"
 
     # Copy to .config
     cp -R waybar ~/.config
