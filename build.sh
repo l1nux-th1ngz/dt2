@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Define the directory to store lists
-DOCUMENTS_DIR="$HOME/Documents"
-
 # Add animations
 spin[0]="-"
 spin[1]="\\"
 spin[2]="|"
 spin[3]="/"
-sleep 20 & PID=$! #simulate a long process
+sleep 56 & PID=$! 
 
 echo "THIS MAY TAKE A WHILE, PLEASE BE PATIENT WHILE ______ IS RUNNING..."
 printf "["
